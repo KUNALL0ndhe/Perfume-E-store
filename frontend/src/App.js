@@ -1,9 +1,12 @@
+import Header from "./components/Header";
+import ViewScreen from "./screens/ViewScreen";
+
 const App = () => {
   return (
-    <div>
-      <h1>
-        My Perfume App
-      </h1>
+    <div >
+      <Header />
+      <div style={{ height: '100px' }}></div>
+      <ViewScreen />
     </div>
   );
 }
