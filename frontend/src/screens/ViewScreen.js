@@ -5,26 +5,29 @@ import {
     Button,
     Icon,
 } from "@chakra-ui/react";
-import { MdOutlineFilterList } from "react-icons/md";
 import HeaderMenuItem from "../components/HeaderMenuItem";
 import Video from "../components/Video";
 import bgone from '../assets/bgone.mp4';
+import Slide from '../components/Slidersm';
+import { MdFilterList } from "react-icons/md";
 import bgtwo from '../assets/bgtwo.mp4';
 import bgthree from '../assets/bgthree.mp4';
+import { useState } from "react";
 
 
 const ViewScreen = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleOpen = () => setIsOpen(!isOpen);
     return (
         <>
-        <Text fontSize='md'> All Perfumes</Text> 
-
-        <Box justifyItems='end'>
-            <Button as={MdOutlineFilterList} > Filter </Button>
+        <Box display='flex' onClick={handleOpen}>
+        <Text fontSize='md' fontWeight='100' ml='4'> <Slide isOpen={isOpen} onClose={() => setIsOpen(false)} /> <Icon as={MdFilterList} mr='3' />All Perfumes</Text> 
         </Box>
         <Heading mt='4'>
-            {/* <Video display='block' url={bgone} />
             <Video display='block' url={bgtwo} />
-            <Video display='block' url={bgthree} /> */}
+        {/* <Video display='block' url={bgone} /> */}
+
         </Heading>
         </>
     )

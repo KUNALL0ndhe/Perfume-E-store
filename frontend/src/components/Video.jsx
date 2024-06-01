@@ -3,6 +3,7 @@ import {
   Box,
   Text,
   Icon,
+  Spacer,
   Button,
 } from '@chakra-ui/react';
 import { BiFilter } from "react-icons/bi";
@@ -35,6 +36,26 @@ const Video = ({ url }) => {
           zIndex: 99,
         }}
       />
+       <Text
+        colorScheme='whiteAlpha'
+        variant='outline'
+        position="absolute"
+        bottom="10px"
+        left="50%"
+        transform="translateX(-50%)"
+        textAlign="center"
+        color="white"
+        fontWeight='md'
+        fontFamily='monospace'
+        fontSize="xl"
+        zIndex= '999' // Ensure the text is above the video
+      >
+      ❝ Capture the moment with a scent that tells your story.❞
+      <br/>
+      <Spacer h='30'/>
+
+Every moment becomes memorable when accompanied by a fragrance that resonates with your life's narrative. Let your perfume be the storyteller of your unique journey and experiences.
+      </Text>
     </Flex>
     
   );
